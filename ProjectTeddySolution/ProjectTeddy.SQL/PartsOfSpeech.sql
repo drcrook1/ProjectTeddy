@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[PartsOfSpeech]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [PartOfSpeech] NVARCHAR(50) NOT NULL
+)

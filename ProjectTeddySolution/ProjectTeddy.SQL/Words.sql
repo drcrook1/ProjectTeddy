@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Words]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Text] NVARCHAR(MAX) NOT NULL
+)

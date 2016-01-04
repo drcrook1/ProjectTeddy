@@ -1,0 +1,237 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Words";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script src="~/Scripts/words/word-controller.js"></script>
+    <script src="~/Scripts/words/word-factory.js"></script>
+}
+<div id="wordPage" ng-controller="wordController">
+    <div class="page-header">
+        <h1>Viewing Words</h1>
+    </div>
+
+    <div class="col-md-6">
+        <div class="bs-callout bs-callout-primary" style="margin-top: 0;">
+            <h4>Select a word from the tweet</h4>
+            <p>Click on a word below and then choose the proper annotation. Click "<strong>save annotation</strong>" for each work that you annotate. The words will dissapear from below as you annotate through them. Once there are no words left a new tweet will automatically load for you. </p>
+        </div>
+        <blockquote>
+            <p class="lead">{{Tweet.Text}}</p>
+        </blockquote>
+        <button ng-repeat="word in TweetWords" ng-click="selectWord(word.Text,word.Id,$index)" class="btn btn-sm" style="margin-right: 15px; margin-bottom: 15px;">{{word.Text}}</button>
+        <div class="bs-callout bs-callout-info">
+            <p>If you are done annoting words for this tweet you can load a new one: </p>
+            <button ng-click="loadNewTweet()" class="btn btn-info btn-xs">Load New Tweet &raquo;</button>
+        </div>
+        
+    </div>
+    <div class="col-md-6">
+
+        <div class="alert alert-info" ng-show="!selectedWordText" style="text-align: center;">
+            Please select a word to annotate
+        </div>
+
+        <div class="panel panel-default ng-hide" ng-show="selectedWordText">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    Please select what type of word <strong><mark>{{selectedWordText}}</mark></strong> is
+                    <input type="hidden" ng-model="selectedWordId" />
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- start left col -->
+                        <strong>Specific Noun</strong>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios1" value="0">
+                                    Noun
+                                </label>
+                            </div>
+                            @*<div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="2">
+                                    Noun Phrase
+                                </label>
+                            </div>*@
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios3" value="1">
+                                    Pronoun
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios4" value="2">
+                                    Possessive Pronoun
+                                </label>
+                            </div>
+                            @*<div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios5" value="5">
+                                    Probing
+                                </label>
+                            </div>*@
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios5" value="3">
+                                    Proper Person
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios5" value="4">
+                                    Proper Place
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios5" value="5">
+                                    Proper Thing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios5" value="6">
+                                    Quantifier Pronoun
+                                </label>
+                            </div>
+                        </div>
+                        <!-- end left col -->
+                    </div>
+                    <div class="col-md-4">
+                        <!-- start middle col -->                        
+                        <strong>Specific Modifier</strong>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios1" value="7">
+                                    Adverb
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="8">
+                                    Preposition
+                                </label>
+                            </div>
+                        </div>
+
+                        <strong>Specific Verb</strong>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios1" value="9">
+                                    Action Verb
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="10">
+                                    Being Verb
+                                </label>
+                            </div>
+                            @*<div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios3" value="10">
+                                    Possessive Verb
+                                </label>
+                            </div>*@
+                                            @*<div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios4" value="11">
+                                    Transitive Verb
+                                </label>
+                            </div>*@
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios4" value="11">
+                                    Helping Verb
+                                </label>
+                            </div>
+                        </div>
+                        <!-- end middle col -->
+                    </div>
+                    <div class="col-md-4">
+                        <!-- start right col-->
+                        <strong>Other</strong>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios1" value="14">
+                                    Adjective
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="16">
+                                    Emoticon :)
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="20">
+                                    Unknown
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="19">
+                                    Probing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="17">
+                                    Contractions
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="18">
+                                    Number
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="15">
+                                    Punctuation
+                                </label>
+                            </div>
+                        </div>
+                        <!-- end right col-->
+                    </div>
+                </div>
+                                
+                <strong>Needs Attention</strong>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios1" value="12">
+                            Concatenated Words
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="wordType" name="wordRadios" id="optionsRadios2" value="13">
+                            Word Paired with Punctuation
+                        </label>
+                    </div>                    
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ng-click="wordSubmit(selectedWordId,wordType,'@User.Identity.GetUserId()')">Save Annotation<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                </div>
+
+            </div>
+            <!-- end panel content -->
+        </div>
+        <!-- end panel -->
+    </div>
+</div>

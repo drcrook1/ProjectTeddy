@@ -1,0 +1,130 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.HadoopHandler", "ProjectTeddy.HadoopHandler\ProjectTeddy.HadoopHandler.csproj", "{D89689EC-5F99-4F81-8073-84C6D10B3974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.SentimentEngine", "ProjectTeddy.SentimentEngine\ProjectTeddy.SentimentEngine.csproj", "{4A33C04C-F39D-4952-AF1D-DF6A4EF244ED}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProjectTeddy.Analytics", "ProjectTeddy.Analytics\ProjectTeddy.Analytics.fsproj", "{6B3D2714-26D5-474F-A349-CC8C5F9E80CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.Core", "ProjectTeddy.Core\ProjectTeddy.Core.csproj", "{76C131FC-6677-4464-B9B3-5121F5EF24C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{907AA204-4DBB-4032-B8A4-60DBB60919DB}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProjectTeddy.FSCore", "ProjectTeddy.FSCore\ProjectTeddy.FSCore.fsproj", "{B80A8478-18BA-4182-BFDD-35A60E61DE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.Annotator", "ProjectTeddy.Annotator\ProjectTeddy.Annotator.csproj", "{A2D5DD83-98E7-4EEE-8BD3-38EFBEF1D4E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.ConsoleManager", "ProjectTeddy.ConsoleManager\ProjectTeddy.ConsoleManager.csproj", "{2E418D78-AAF7-46FF-9AF3-3BA1E1540EC6}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProjectTeddy.SQL", "ProjectTeddy.SQL\ProjectTeddy.SQL.sqlproj", "{57844986-8EEA-4D80-9D50-67BEE36E320E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProjectTeddy.CorrelationBuilder", "ProjectTeddy.CorrelationBuilder\ProjectTeddy.CorrelationBuilder.fsproj", "{546C44CC-AD84-41DC-B565-7C0D9EA465A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeddy.Tester", "ProjectTeddy.Tester\ProjectTeddy.Tester.csproj", "{17560429-C6FB-4CA3-9A40-2E9435A0E76D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProjectTeddy.BlobProvider", "ProjectTeddy.BlobProvider\ProjectTeddy.BlobProvider.fsproj", "{925AE769-0B6D-4DE8-8823-AC4D66335C8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89689EC-5F99-4F81-8073-84C6D10B3974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89689EC-5F99-4F81-8073-84C6D10B3974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89689EC-5F99-4F81-8073-84C6D10B3974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89689EC-5F99-4F81-8073-84C6D10B3974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A33C04C-F39D-4952-AF1D-DF6A4EF244ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A33C04C-F39D-4952-AF1D-DF6A4EF244ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A33C04C-F39D-4952-AF1D-DF6A4EF244ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A33C04C-F39D-4952-AF1D-DF6A4EF244ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3D2714-26D5-474F-A349-CC8C5F9E80CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3D2714-26D5-474F-A349-CC8C5F9E80CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3D2714-26D5-474F-A349-CC8C5F9E80CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3D2714-26D5-474F-A349-CC8C5F9E80CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C131FC-6677-4464-B9B3-5121F5EF24C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C131FC-6677-4464-B9B3-5121F5EF24C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C131FC-6677-4464-B9B3-5121F5EF24C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C131FC-6677-4464-B9B3-5121F5EF24C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80A8478-18BA-4182-BFDD-35A60E61DE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80A8478-18BA-4182-BFDD-35A60E61DE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80A8478-18BA-4182-BFDD-35A60E61DE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80A8478-18BA-4182-BFDD-35A60E61DE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D5DD83-98E7-4EEE-8BD3-38EFBEF1D4E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D5DD83-98E7-4EEE-8BD3-38EFBEF1D4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D5DD83-98E7-4EEE-8BD3-38EFBEF1D4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D5DD83-98E7-4EEE-8BD3-38EFBEF1D4E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E418D78-AAF7-46FF-9AF3-3BA1E1540EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E418D78-AAF7-46FF-9AF3-3BA1E1540EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E418D78-AAF7-46FF-9AF3-3BA1E1540EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E418D78-AAF7-46FF-9AF3-3BA1E1540EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57844986-8EEA-4D80-9D50-67BEE36E320E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{546C44CC-AD84-41DC-B565-7C0D9EA465A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546C44CC-AD84-41DC-B565-7C0D9EA465A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546C44CC-AD84-41DC-B565-7C0D9EA465A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546C44CC-AD84-41DC-B565-7C0D9EA465A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17560429-C6FB-4CA3-9A40-2E9435A0E76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17560429-C6FB-4CA3-9A40-2E9435A0E76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17560429-C6FB-4CA3-9A40-2E9435A0E76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17560429-C6FB-4CA3-9A40-2E9435A0E76D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925AE769-0B6D-4DE8-8823-AC4D66335C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925AE769-0B6D-4DE8-8823-AC4D66335C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925AE769-0B6D-4DE8-8823-AC4D66335C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925AE769-0B6D-4DE8-8823-AC4D66335C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dysfunctionalcrook.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ProjectTeddy.Analytics\\ProjectTeddy.Analytics.fsproj
+		SccProjectName1 = ProjectTeddy.Analytics
+		SccLocalPath1 = ProjectTeddy.Analytics
+		SccProjectUniqueName2 = ProjectTeddy.SentimentEngine\\ProjectTeddy.SentimentEngine.csproj
+		SccProjectName2 = ProjectTeddy.SentimentEngine
+		SccLocalPath2 = ProjectTeddy.SentimentEngine
+		SccProjectUniqueName3 = ProjectTeddy.HadoopHandler\\ProjectTeddy.HadoopHandler.csproj
+		SccProjectName3 = ProjectTeddy.HadoopHandler
+		SccLocalPath3 = ProjectTeddy.HadoopHandler
+		SccProjectUniqueName4 = ProjectTeddy.Core\\ProjectTeddy.Core.csproj
+		SccProjectName4 = ProjectTeddy.Core
+		SccLocalPath4 = ProjectTeddy.Core
+		SccProjectUniqueName5 = ProjectTeddy.FSCore\\ProjectTeddy.FSCore.fsproj
+		SccProjectName5 = ProjectTeddy.FSCore
+		SccLocalPath5 = ProjectTeddy.FSCore
+		SccProjectUniqueName6 = ProjectTeddy.Annotator\\ProjectTeddy.Annotator.csproj
+		SccProjectName6 = ProjectTeddy.Annotator
+		SccLocalPath6 = ProjectTeddy.Annotator
+		SccProjectUniqueName7 = ProjectTeddy.ConsoleManager\\ProjectTeddy.ConsoleManager.csproj
+		SccProjectName7 = ProjectTeddy.ConsoleManager
+		SccLocalPath7 = ProjectTeddy.ConsoleManager
+		SccProjectUniqueName8 = ProjectTeddy.SQL\\ProjectTeddy.SQL.sqlproj
+		SccProjectName8 = ProjectTeddy.SQL
+		SccLocalPath8 = ProjectTeddy.SQL
+		SccProjectUniqueName9 = ProjectTeddy.CorrelationBuilder\\ProjectTeddy.CorrelationBuilder.fsproj
+		SccProjectName9 = ProjectTeddy.CorrelationBuilder
+		SccLocalPath9 = ProjectTeddy.CorrelationBuilder
+		SccProjectUniqueName10 = ProjectTeddy.Tester\\ProjectTeddy.Tester.csproj
+		SccProjectName10 = ProjectTeddy.Tester
+		SccLocalPath10 = ProjectTeddy.Tester
+		SccProjectUniqueName11 = ProjectTeddy.BlobProvider\\ProjectTeddy.BlobProvider.fsproj
+		SccProjectName11 = ProjectTeddy.BlobProvider
+		SccLocalPath11 = ProjectTeddy.BlobProvider
+	EndGlobalSection
+EndGlobal
